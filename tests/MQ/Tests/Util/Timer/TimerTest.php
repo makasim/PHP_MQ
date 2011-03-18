@@ -27,9 +27,14 @@ class TimerTest extends \PHPUnit_Framework_TestCase
 
   public function testFormatHuman()
   {
-    $formatedMicrotime = Timer::formatHuman('1300447804.1803');
+    $formatedMicrotime = Timer::formatHuman('1300447804.180');
+    $this->assertEquals('13:30:04.18', $formatedMicrotime);
 
-    $this->assertEquals('13:30:04.1803', $formatedMicrotime);
+    $formatedMicrotime = Timer::formatHuman('1300447804.18031');
+    $this->assertEquals('13:30:04.18', $formatedMicrotime);
+
+    $formatedMicrotime = Timer::formatHuman('1300447804.1808');
+    $this->assertEquals('13:30:04.181', $formatedMicrotime);
   }
 
   public function testCurrent()

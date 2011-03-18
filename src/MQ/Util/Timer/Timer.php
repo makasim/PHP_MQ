@@ -124,7 +124,11 @@ class Timer
   public static function formatHuman($microtime)
   {
     $time = date('H:i:s', $microtime);
-    list(, $micro) = explode('.', (string) $microtime);
+
+    $micro = 0;
+    if ($microtime >= 0.5) {
+      list(, $micro) = explode('.', (string) round($microtime, 3));
+    }
 
     return "{$time}.{$micro}";
   }
