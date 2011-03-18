@@ -1,0 +1,7 @@
+Php ActiveMQ client based on Stomp protocol.
+
+Requirements:
+
+php 5.3
+activemq 5.4
+phpunit 3.5
